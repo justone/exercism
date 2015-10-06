@@ -1,0 +1,6 @@
+(load-file "triangle_test.clj")
+(doc set)
+(load-file "triangle_test.clj")
+
+(load-file "triangle_test.clj")
+(source case)

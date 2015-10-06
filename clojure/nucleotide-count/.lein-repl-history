@@ -1,0 +1,4 @@
+(load-file "nucleotide_count_test.clj")
+(map #([% 0]) "ATCG")
+(map #(vec % 0) "ATCG")
+(load-file "nucleotide_count_test.clj")

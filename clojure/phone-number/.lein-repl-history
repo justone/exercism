@@ -1,0 +1,4 @@
+(load-file "phone_number_test.clj")
+(partition 3 "8675309")
+tion 3 "8675309")
+(load-file "phone_number_test.clj")

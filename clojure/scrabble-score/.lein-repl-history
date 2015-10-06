@@ -1,0 +1,65 @@
+(load-file "scrabble_score_test.clj")
+d-file "scrabble_score_test.clj")
+(load-file "scrabble_score_test.clj")
+(char "A")
+")
+
+(load-file "scrabble_score_test.clj")
+(scrabble-score/score-letter "a")
+(load-file "scrabble_score_test.clj")
+(scrabble-score/score-letter "a")
+(load-file "scrabble_score_test.clj")
+(map #(map % 1) "aeiou")
+(map #({% 1}) "aeiou")
+(map #(-> {% 1}) "aeiou")
+(map #(-> {%1 %2}) {"aeiou" 1 "rst" 2})
+(map #(-> {(first %) (second %)}) {"aeiou" 1 "rst" 2})
+(map #(map #(-> {% 1}) {(first %) (second %)}) {"aeiou" 1 "rst" 2})
+(seq {"aeiou" 1 "rst" 2})
+(defn splay [str value] (map #(-> {% value}) str))
+(splay "aeiou" 1)
+(map splay {(first %) (second %)}) {"aeiou" 1 "rst" 2})
+(defn splay [[str value]] (map #(-> {% value}) str))
+(map splay {"aeiou" 1 "rst" 2})
+(mapcat splay {"aeiou" 1 "rst" 2})
+(mapcat (fn [[str val]] (map #(-> {% value}) str) {"aeiou" 1 "rst" 2})
+)
+(mapcat (fn [[str val]] (map #(-> {% val}) str) {"aeiou" 1 "rst" 2}))
+(defn splay [[str value]] (map #(-> {% value}) str))o
+(mapcat splay {"aeiou" 1 "rst" 2})
+(load-file "scrabble_score_test.clj")
+(scrabble-score/score-letter "a")
+scrabble-score/charscores
+(into {} (mapcat splay {"aeiou" 1 "rst" 2}))
+(load-file "scrabble_score_test.clj")
+scrabble-score/charscores
+(load-file "scrabble_score_test.clj")
+(scrabble-score/score-letter "a")
+(load-file "scrabble_score_test.clj")
+(scrabble-score/score-letter "a")
+(scrabble-score/score-letter "A")
+(load-file "scrabble_score_test.clj")
+(str \a)
+(chars "a")
+(doc chars_
+)
+(doc chars)
+(load-file "scrabble_score_test.clj")
+(clojure.string/lower-case \a)
+(clojure.string/lower-case \A)
+(load-file "scrabble_score_test.clj")
+(def value->letters
+  {1 "AEIOULNRST"
+   2 "DG"
+   3 "BCMP"
+   4 "FHVWY"
+   5 "K"
+   8 "JX"
+   10 "QZ"})
+(def letter->value
+  (into {} (for [[value letters] value->letters
+                 letter letters]
+             [letter value])))
+letter->value
+(for [[value letters] value-letters letter letters] [letter value])
+(for [[value letters] value->letters letter letters] [letter value])

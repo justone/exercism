@@ -1,0 +1,39 @@
+(load-file "anagram_test.clj")
+(help juxt)
+(doc juxt)
+(juxt [= (partial sort)] (str/lower-case "banana" "BANANA"))
+(require '[clojure.string :as str])
+(juxt [= (partial sort)] (str/lower-case "banana" "BANANA"))
+(juxt [= (partial sort)] (map str/lower-case ["banana" "BANANA"]))
+((juxt [= (partial sort)] (map str/lower-case ["banana" "BANANA"])))
+(juxt [= (partial sort)] (map str/lower-case ["banana" "BANANA"]))
+((juxt [= (partial sort)]) (map str/lower-case ["banana" "BANANA"]))
+(map (juxt [= (partial sort)]) (map str/lower-case ["banana" "BANANA"]))
+(defn same? [a b] (apply = (map str/lower-case [a b])))
+(same "banana" "BANANA")
+(same? "banana" "BANANA")
+(defn ana? [a b] (apply = (map sort [a b])))
+(ana? "banana" "BANANA")
+(def haystack ["one" "two" "three"])
+(defn dup [n] [n n])
+(map dup haystack)
+(map #([(str/upper-case (first %1)) %2) (map dup haystack))
+(map #([(str/upper-case (first %1)) %2]) (map dup haystack))
+(map #(update-in % [0] str/upper-case) (map dup haystack))
+(map #([(str/lower-case (first %1)) %2]) (map dup haystack))
+(map #(update-in % [0] str/upper-case) (map dup haystack))
+(defn upfirst [d] (update-in d [0] str/upper-case))
+(map upfirst (map dup haystack))
+(upfirst ["oNe" "OnE"])
+(map upfirst map dup haystack)
+haystack
+(-> haystack dup upfirst)
+(-> haystack (map dup) upfirst)
+(-> haystack (map dup) (map upfirst))
+(load-file "anagram_test.clj")
+(interleave (repeatedly "one") haystack)
+(interleave (constantly "one") haystack)
+(interleave (repeatedly (fn [] "one")) haystack)
+(partition 2 (interleave (repeatedly (fn [] "one")) haystack))
+(load-file "anagram_test.clj")
+(load-file "for.clj")

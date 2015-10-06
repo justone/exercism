@@ -1,0 +1,8 @@
+(load-file "space_age_test.clj")
+(/ 1,000,000,000 31557600)
+(/ 1000000000 31557600)
+(/ 1000000000.0 31557600)
+(load-file "space_age_test.clj")
+(space-age/on-earth 1000000000)
+(space-age/on-mercury 1000000000)
+(load-file "space_age_test.clj")
